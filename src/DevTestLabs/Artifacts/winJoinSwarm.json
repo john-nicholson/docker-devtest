@@ -1,0 +1,22 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
+    "title": "Dcoker Swarm Join (Windows)",
+    "description": "",
+    "iconUri": "",
+    "targetOsType": "Windows",
+    "parameters": {
+      "joinToken": {
+        "type": "string",
+        "displayName": "Join Token",
+        "description": "The join token from the master"
+      },
+      "manager": {
+        "type": "string",
+        "displayName": "Manager",
+        "description": "An ip address and port to comunicate with a manager"
+      }
+    },
+    "runCommand": {
+      "commandToExecute": "[concat('docker join', ' -token ', parameters('joinToken'), ' ', parameters('manager')]"
+    }
+  }
